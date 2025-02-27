@@ -81,7 +81,7 @@ if st.sidebar.button("Set AI Character"):
     # Reset the conversation history with the chosen system prompt.
     st.session_state.conversation = [("system", system_prompt)]
     save_history(username, st.session_state.conversation)
-    st.experimental_rerun()
+    st.rerun()
 
 # Load persistent conversation history (if it exists)
 if "conversation" not in st.session_state:
@@ -98,11 +98,11 @@ st.title("Chat with Your AI Character")
 # Display the conversation history
 for role, message in st.session_state.conversation:
     if role == "human":
-        st.markdown(f"**You:** {message}")
+        st.markdown(f"**{username}:** {message}")
     elif role == "assistant":
-        st.markdown(f"**AI:** {message}")
+        st.markdown(f"**Chatbot:** {message}")
     elif role == "system":
-        st.markdown(f"*AI Character:* {message}")
+        st.markdown(f"*Chabot Character:* {message}")
 
 st.markdown("---")
 st.write("Enter your message below:")
