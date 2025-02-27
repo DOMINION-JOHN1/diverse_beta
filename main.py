@@ -6,10 +6,11 @@ from langchain_groq import ChatGroq
 
 # Load environment variables (e.g., API_KEY)
 load_dotenv()
-
+api_key = os.getenv("GROQ_API_KEY")
 # Instantiate the language model
 llm = ChatGroq(
     model="llama3-8b-8192",
+    api_key=api_key,
     temperature=0.1,
     max_tokens=None,
     timeout=None,
