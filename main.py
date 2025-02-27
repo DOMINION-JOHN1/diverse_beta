@@ -127,4 +127,4 @@ if submit_button and user_message:
     save_history(username, st.session_state.conversation)
     
     # Rerun to update the display
-    st.experimental_rerun()
+    st.rerun()
